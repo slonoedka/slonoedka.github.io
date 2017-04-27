@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+}
+
+.box-achievement {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.achievement {
+  border: 4px solid #89b8cf;
+  border-radius: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.achievement:nth-child(even),
+.achievement:nth-child(even) .achievement__number-box {
+  border-color: #b09eb7;
+}
+
+.achievement * {
+  box-sizing: border-box;
+}
+
+.achievement > img {
+  clip-path: circle(50% at 50% 50%);
+  background: #fff;
+  width: 92px;
+  position: absolute;
+  z-index: 2;
+}
+
+.achievement__number-box {
+  background: #fff;
+  border: 4px solid #89b8cf;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+}
+
+.achievement__number-text {
+  font-weight: bold;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  position: relative;
+  bottom: 2px;
+  right: 2px;
+  z-index: 2;
+}
