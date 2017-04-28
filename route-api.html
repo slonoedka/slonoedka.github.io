@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Route API</title>
+  <script src="js/route-api.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+      const partsOfRoutes = [
+        {
+          "from": "Madrid",
+          "to": "Barcelona",
+          "transport": {
+            "type": "train",
+            "identificationNumber": "78A",
+            "seat": "45B"
+          }
+        },
+        {
+          "from": "Barcelona",
+          "to": "Gerona Airport",
+          "transport": {
+            "type": "airport bus",
+            "seat": "No seat assignment"
+          }
+        },
+        {
+          "from": "Gerona Airport",
+          "to": "Stockholm",
+          "transport": {
+            "type": "flight",
+            "identificationNumber": "SK455",
+            "seat": "3A",
+            "gate": "45B",
+            "baggage": {
+              "type": "ticket",
+              "identificationNumber": "344"
+            }
+          }
+        },
+        {
+          "from": "Stockholm",
+          "to": "New York JFK",
+          "transport": {
+            "type": "flight",
+            "identificationNumber": "SK22",
+            "seat": "7B",
+            "gate": "22",
+            "baggage": {
+              "type": "automatic"
+            }
+          }
+        },
+        {
+          "from": "Moscow",
+          "to": "Madrid",
+          "transport": {
+            "type": "horse",
+            "identificationNumber": "#1",
+            "seat": "behind the wheel",
+          }
+        },
+      ];
+
+      shuffle(partsOfRoutes);
+
+      // Check the shuffle
+
+      for (let index in partsOfRoutes) {
+        document.body.innerHTML +=
+          'From ' + partsOfRoutes[index].from +
+          ' ' +
+          'to ' + partsOfRoutes[index].to +
+          '<br>';
+      }
+
+      document.body.innerHTML += '<hr>';
+
+      let route = new Route(partsOfRoutes);
+
+      for (let index in route) {
+        document.body.innerHTML += route[index] + '<br>';
+      }
+
+      /**
+       * Shuffles array in place. ES6 version
+       * @param {Array} a items The array containing the items.
+       * @source http://stackoverflow.com/a/6274381/4223982
+       */
+      function shuffle(a) {
+        for (let i = a.length; i; i--) {
+          let j = Math.floor(Math.random() * i);
+          [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        }
+      }
+
+    });
+  </script>
+</head>
+<body></body>
+</html>
