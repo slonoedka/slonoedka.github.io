@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Classman</title>
+  <script src="js/classman.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+      let first = document.querySelector('.first');
+      let second = document.querySelector('.second');
+      let third = document.querySelector('.third');
+      let fourth = document.querySelector('.fourth');
+
+      // addClass()
+
+      console.log(
+        'first.addClass("one"):',
+        first.addClass("one")
+      );
+      console.log(
+        'first.addClass("one-one", "one-one-one"):',
+        first.addClass("one-one", "one-one-one")
+      );
+
+      // removeClass()
+
+      console.log(
+        'second.removeClass("second")',
+        second.removeClass("second")
+      );
+      console.log(
+        'second.removeClass("second-second", "second-second-second")',
+        second.removeClass("second-second", "second-second-second")
+      );
+
+      // toggleClass()
+
+      console.log(
+        'third.toggleClass("three")',
+        third.toggleClass("three")
+      );
+      console.log(
+        'third.toggleClass("three-three")',
+        third.toggleClass("three-three")
+      );
+      console.log(
+        'third.toggleClass("three-three-three")',
+        third.toggleClass("three-three-three", true)
+      );
+      console.log(
+        'third.toggleClass("three-three-three-three")',
+        third.toggleClass("three-three-three-three", false)
+      );
+
+      // hasClass()
+
+      console.log(
+        'fourth.hasClass("four")',
+        fourth.hasClass("four")
+      );
+      console.log(
+        'fourth.hasClass("five")',
+        fourth.hasClass("five")
+      );
+
+    });
+  </script>
+</head>
+<body>
+  <ol>
+    <li class="first">First</li>
+    <li class="second second-second second-second-second">Second</li>
+    <li class="third three three-three-three">Third</li>
+    <li class="fourth four">Fourth</li>
+  </ol>
+</body>
+</html>
